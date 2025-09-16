@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!e9l8rerfe31&)7u^9c&6ty0#mtjb4cb71pak2$)lkpv^63g$n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['deployed-api-ohu1.onrender.com']
 
 
 # Application definition
@@ -67,6 +67,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'project.wsgi.application'
 

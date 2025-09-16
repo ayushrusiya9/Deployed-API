@@ -28,4 +28,4 @@ from rest_framework import serializers
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        field = '__all__'
+        fields = '__all__'

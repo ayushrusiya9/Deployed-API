@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from app.models import Student
+from rest_framework import viewsets
+from rest_framework.authentication import  BasicAuthentication,SessionAuthentication
+from rest_framework.permissions import IsAuthenticated,AllowAny
 
 
 # Create your views here.
@@ -107,4 +110,13 @@ class Detail(APIView):
         snippet = self.get_object(pk)
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT) 
-    
+
+
+
+class StudentViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    """
+    A simple ViewSet for viewing and editing accounts.
+    """
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer

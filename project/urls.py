@@ -23,10 +23,6 @@ from app.routers import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('stu_list/',views.stu_list,name='stu_list'),
-    # path('stu_detail/<int:pk>/',views.stu_details,name='stu_detail'),
-     path('list/', List.as_view(), name='List'),
-    path('detail/<int:pk>/',Detail.as_view(),name=''),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls'))
 ]
